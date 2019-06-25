@@ -6,18 +6,28 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Pokemon API</title>
+  <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 
 <body style="height:100vh;" class="bg-dark">
   <div class="container-fluid text-white text-center">
-    <h1>Pokemon</h1>
+    <h1>
+      <img src="https://cdn.pixabay.com/photo/2016/07/23/13/18/pokemon-1536847_960_720.png" alt="pikachu-pokemon-vector"
+        style="height:50px;width:50px" class="mr-2" id="pokeball">
+      Pok&eacute;mon
+      <img src="https://cdn.pixabay.com/photo/2016/07/23/13/18/pokemon-1536847_960_720.png" alt="pikachu-pokemon-vector"
+        style="height:50px;width:50px" class="ml-2" id="pokeball">
+    </h1>
     <div id="pokemon" class="row justify-content-around"></div>
-    <h5>Selected Pokemon</h5>
-    <div id="selected-pokemon" class="row justify-content-around">Select a Pokemon!</div>
-    <h1>List of My Pokemon</h1>
-    <div id="my-pokemon" class="row justify-content-around"></div>
+    <h5>Selected Pok&eacute;mon</h5>
+    <div id="selected-pokemon" class="row justify-content-around"><em class="text-warning">Select a
+        Pok&eacute;mon!<br><img src="https://seeklogo.com/images/P/Pikachu-logo-D0AAA93F17-seeklogo.com.png"
+          alt="pikachu"></em>
+    </div>
+    <h1>List of My Pok&eacute;mon</h1>
+    <div id="my-pokemon" style="height:50vh;" class="row justify-content-around"></div>
 
   </div>
 
