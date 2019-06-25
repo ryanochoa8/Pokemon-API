@@ -8,7 +8,7 @@ function drawPokemon() {
   let pokemon = _pokemonService.Pokemon
   let template = ''
   pokemon.forEach(p => template += `
-    <button class="col-2 btn btn-outline-info m-3" onclick="app.controllers.pokemonController.getSelectedPokemon('${p.name}')">${p.name}</button>
+    <button class="col-2 btn btn-info m-3" onclick="app.controllers.pokemonController.getSelectedPokemon('${p.name}')">${p.name}</button>
   `
   )
   pokemonElem.innerHTML = template
