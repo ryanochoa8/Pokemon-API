@@ -1,4 +1,4 @@
-import PokemonService from "./PokemonService";
+import PokemonService from "./PokemonService.js";
 
 
 let _pokemonService = new PokemonService()
@@ -14,9 +14,42 @@ function drawPokemon() {
   pokemonElem.innerHTML = template
 }
 
+function drawSelectedPokemon() {
+  let selectedElem = document.querySelector("#selected-pokemon")
+  let selectedPokemon = _pokemonService.SelectedPokemon
+  selectedElem.innerHTML = selectedPokemon.Template
+  // console.log('draw selected', selectedPokemon)
+}
+
+function drawMyPokemon() {
+  let myPokemonElem = document.querySelector("#my-pokemon")
+  let myPokemon = _pokemonService.MyPokemon
+  let template = ''
+  myPokemon.forEach(p => {
+    template += p.Template
+  })
+  myPokemonElem.innerHTML = template
+}
+
 export default class PokemonController {
   constructor() {
     _pokemonService.addSubscriber("pokemon", drawPokemon)
+    _pokemonService.addSubscriber("selectedPokemon", drawSelectedPokemon)
+    _pokemonService.addSubscriber("myPokemon", drawMyPokemon)
     _pokemonService.getPokemon()
+    _pokemonService.getMyPokemon()
+
+  }
+
+  getSelectedPokemon(name) {
+    _pokemonService.getSelectedPokemon(name)
+  }
+
+  savePokemon() {
+    _pokemonService.savePokemon()
+  }
+
+  deletePokemon(id) {
+    _pokemonService.deletePokemon(id)
   }
 }
